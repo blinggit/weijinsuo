@@ -1,0 +1,280 @@
+@border-color: #ccc;
+@a-color: #666;
+/* 微金所的默认的主题色 */
+
+@main-color: #e92322;
+
+/* 头部区域样式 */
+
+#header{
+	border-bottom: 1px solid @border-color;
+	.row{
+		> div{
+			line-height: 40px;
+			height: 40px;
+			font-size: 12px;
+			&+div{
+				border-left: 1px solid @border-color;
+			}
+			>a{
+				color: @a-color;
+				&.btn-danger{
+					color: #fff;
+				}
+			}
+		}
+	}
+
+}
+/* 导航栏区域*/
+#nav{
+	background-color: #fff;
+	margin-bottom: 0px;
+	.navbar-header{
+		height: 80px;
+		.navbar-toggle{
+			margin-top: 23px;
+		}
+		.navbar-brand{
+			
+			line-height: 50px;
+			.icon-icon{
+				color: @main-color;
+				font-size: 30px;
+			}
+			.icon-logo{
+				color: #000;
+				font-size: 30px;
+			}
+		}
+	}
+	.navbar-collapse{
+		.navbar-nav{
+			>li{
+				&.active{
+					>a{
+						background-color: #fff;
+						border-bottom: 2px solid @main-color;
+					}
+				}
+				>a{
+					height: 80px;
+					line-height: 48px;
+					&:hover{
+						border-bottom: 2px solid @main-color;
+					}
+				}
+			}
+		}
+	}
+}
+/*轮播图*/
+#slide{
+	.large-image{
+		width: 100%;
+		height: 410px;
+		background-position: center center;
+	}
+	.small-image{
+		width: 100%;
+	}
+}
+// 特色区域
+#feature{
+	padding: 40px 0;
+	.media{
+		margin-bottom: 10px;
+		>a{
+			color: @a-color;
+			text-decoration: none;
+			&:hover{
+				color: 
+				@main-color;
+			}
+		}
+	}
+}
+// 立即预约
+#booking{
+	border-top: 1px solid @border-color;
+	border-bottom: 1px solid @border-color;
+	padding: 20px ;
+	.text-danger{
+		color: @main-color;
+	}
+}
+// 特别推荐
+#products{
+	padding: 40px 0;
+	background-color: #f5f5f5;
+	.nav-tabs{
+		li{
+			>a{
+				font-size: 16px;
+				border: 0;
+				background-color: #f5f5f5;
+				color: @a-color;
+			}
+			&.active{
+				border-bottom: 3px solid @main-color;
+			}
+			
+		}
+	}
+	.product{
+		margin-top: 20px;
+		// 左边自适应
+		display: flex;
+		background-color: #fff;
+		&.red{
+			background-color: #e92322;
+			color: #fff;
+			position: relative;
+			&::before{
+				content: "\e915";
+                font-family: 'itcast';
+                font-size: 30px;
+                position: absolute;
+                left: 0px;
+                top: -6px;
+			}
+		}
+		.left{
+			flex: 1;
+			padding: 15px;
+			height: 160px;
+			.col-xs-6 {
+				margin-bottom: 10px;
+				p{
+					padding: 0px;
+					margin: 0;
+				}
+            }
+		}
+		// 右边固定
+		.right{
+			width: 120px;
+			@media (min-width:320px) and(max-width:360px){
+				width: 100px;
+			};
+			@media(min-width:992px) and (max-width:1200px){
+                width: 100px;
+            }
+			border-left: 1px dashed @border-color;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+			&::before{
+				height: 16px;
+				width: 16px;
+				position: absolute;
+				content: "";
+				border-radius: 50%;
+				background-color: #f5f5f5;
+				left: -8px;
+				top: -8px;
+			}
+			&::after{
+				height: 16px;
+				width: 16px;
+				position: absolute;
+				content: "";
+				border-radius: 50%;
+				background-color: #f5f5f5;
+				bottom: -8px;
+				left: -8px;
+			}
+			p{
+				padding: 0;
+				margin: 0;
+				strong{
+					font-size: 30px;
+				}
+			} 
+		}
+	}
+	
+}
+// 新闻区域
+#news{
+	padding: 40px 0;
+	.news-title{
+		border-bottom: 1px dashed @border-color;
+		line-height: 40px;
+		position: relative;
+		&::after{
+			content: "";
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			position: absolute;
+			border: 1px solid @border-color;
+			bottom: -5px;
+			right: -10px;
+		}
+	}
+	.nav-tabs{
+		border: 0 none;
+		li{
+			&.active{
+				>a{
+					background-color: @main-color;
+				}
+			}
+			@media (max-width:992px) {
+				width: 25%;
+                >a{
+                    width: 60px;
+                    margin: 0px auto;
+                }
+			}
+			>a{
+				border:0;
+				color: @a-color;
+				border-radius: 50%;
+				margin-bottom: 20px;
+				&:hover{
+					background-color: @main-color;
+				}
+				>i{
+					font-size: 30px;
+				}
+			}
+		}
+	}
+	.tab-content{
+		ul{
+			li{
+				list-style: none;
+				line-height: 40px;
+				a{
+					color: @a-color;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+// 合作伙伴
+#partner{
+	ul{
+		display: flex;
+		flex-wrap: wrap;
+		li{
+			flex: 1;
+			list-style: none;
+			a{
+				text-decoration: none;
+				i{
+					font-size: 60px;
+					color: @a-color;
+				}
+				&:hover{
+					color: @main-color;
+				}
+			}
+		}
+	}
+}
